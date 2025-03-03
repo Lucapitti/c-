@@ -1,6 +1,6 @@
-NAME = megaphone
+NAME = phonebook
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = megaphone.cpp
+SRCS = 
 OBJ	= $(patsubst %.cpp, %.o, $(SRCS))
 CC = c++
 RM = rm -f
