@@ -1,3 +1,6 @@
-int main() {
-	
+#include "Zombie.hpp"
+
+int main()
+{
+		
 }
