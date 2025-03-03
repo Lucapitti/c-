@@ -50,7 +50,6 @@ public:
 		{
 			std::cout << "Enter desired index: ";
 			std::cin >> i;
-			std::cin.ignore();
 			if (std::cin.fail())
 			{
 				std::cout << "Invalid input, enter a valid index (1, 8)\n";
