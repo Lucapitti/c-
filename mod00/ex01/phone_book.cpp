@@ -1,11 +1,12 @@
 #include "phone_book.hpp"
+#include <limits>
 
 PhoneBook::PhoneBook(){
 	counter = 0;
 }
 
 void PhoneBook::addContact(){
-	phone_book[counter % 9].setContact();
+	phone_book[counter % 8].setContact();
 	counter++;
 }
 
@@ -41,12 +42,14 @@ void PhoneBook::searchContact(){
 		std::cin >> i;
 		if (std::cin.fail())
 		{
-			std::cout << "Invalid input, enter a valid index (1, 8)\n";
+			std::cout << "Invalid input, enter a valid index (1, " << '0' + counter + 1 << ")" << std::endl;
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
 		else if (i > counter || i < 1 || i > 8)
-			std::cout << "Invalid input, enter a valid index (1, 8)\n";
+		{
+			std::cout << "Invalid input, enter a valid index (1, " << '0' + counter + 1 << ")" << std::endl;
+		}
 		else
 			break;
 	}

@@ -14,12 +14,13 @@ public:
 	std::string name;
 	std::string last_name;
 	std::string nickname;
+	Contact() {};
 
 	void setContact();
-	
-	~Contact();
 
 	void print();
+
+	~Contact();
 };
 
 #endif
