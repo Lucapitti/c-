@@ -18,5 +18,7 @@ int main()
 		}
 		else if (input == "EXIT")
 			break;
+		std::cout << "> ";
 	}
+	return 0;
 }
