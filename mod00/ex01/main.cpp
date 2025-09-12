@@ -5,10 +5,9 @@ int main()
 {
 	std::string input;
 	PhoneBook phone_book;
-	while (1)
+	std::cout << "> ";
+	while (std::getline(std::cin, input))
 	{
-		std::cout << "> ";
-		std::getline(std::cin, input);
 		if (input == "ADD")
 		{
 			phone_book.addContact();
@@ -19,5 +18,7 @@ int main()
 		}
 		else if (input == "EXIT")
 			break;
+		std::cout << "> ";
 	}
+	return 0;
 }
