@@ -15,12 +15,24 @@ Point::Point(const Point& other) : x(other.x), y(other.y)
 	//std::cout<<"Copy assignment operator called\n";
 }
 
-float Point::sort_of_cross_product(const Point& other, const Point& start) const
-{
-	return(((x - start.x)*(other.y - start.y) - (other.x - start.x)*(y - start.y)).toFloat());
-}
 
 Point::~Point()
 {
 	//std::cout << "Default destructor called\n";
+}
+
+Point Point::operator-(const Point& other) const
+{
+	Point result(this->x - other.x, this->y - other.y);
+	return (result);
+}
+
+int Point::sign_of_vect_prod(Point b)
+{
+	std::cout << this->x * b.y - this->y * b.x << std::endl;
+	if (this->x * b.y - this->y * b.x > 0)
+		return 1;
+	if (this->x * b.y - this->y * b.x == 0)
+		return 0;
+	return -1;
 }
