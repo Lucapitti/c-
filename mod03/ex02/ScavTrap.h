@@ -3,6 +3,7 @@
 class ScavTrap : public ClapTrap
 {
 public:
+	ScavTrap();
 	ScavTrap(std::string new_name);
 	~ScavTrap();
 	void	guardGate();
