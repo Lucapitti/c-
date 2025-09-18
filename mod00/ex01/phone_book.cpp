@@ -1,8 +1,29 @@
 #include "phone_book.hpp"
 #include <limits>
 
-PhoneBook::PhoneBook(){
-	counter = 0;
+PhoneBook::PhoneBook() : counter(0)
+{}
+
+PhoneBook::PhoneBook(const PhoneBook& other) : counter(other.counter)
+{
+	int i = 0;
+	while (i < other.counter && i < 8)
+	{
+		phone_book[i] = other.phone_book[i];
+		i++;
+	}
+}
+
+PhoneBook& PhoneBook::operator=(const PhoneBook& other)
+{
+	this->counter = other.counter;
+	int i = 0;
+	while (i < other.counter && i < 8)
+	{
+		this->phone_book[i] = other.phone_book[i];
+		i++;
+	}
+	return *this;
 }
 
 void PhoneBook::addContact(){
@@ -57,7 +78,7 @@ void PhoneBook::searchContact(){
 		count = getline_int();
 		if (count > counter || count < 1 || count > 8)
 		{
-			if (counter	< 7)
+			if (counter	<= 7)
 				std::cout << "Invalid input, enter a valid index (1, " << counter << ")" << std::endl;
 			else
 				std::cout << "Invalid input, enter a valid index (1, 8)" << std::endl;
@@ -65,7 +86,10 @@ void PhoneBook::searchContact(){
 		else
 			break;
 	}
-	phone_book[count - 1].print();
+	if (counter < 8)
+		phone_book[counter - count].print();
+	else
+		phone_book[8 - count].print();
 }
 
 PhoneBook::~PhoneBook(){};

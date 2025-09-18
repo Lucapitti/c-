@@ -1,8 +1,10 @@
 #include "contact.hpp"
 #include "phone_book.hpp"
+#include <stdio.h>
 
 int main()
 {
+
 	std::string input;
 	PhoneBook phone_book;
 	std::cout << "> ";

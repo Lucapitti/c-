@@ -14,8 +14,9 @@ public:
 	std::string name;
 	std::string last_name;
 	std::string nickname;
-	Contact() {};
-
+	Contact();
+	Contact(const Contact& other);
+	Contact& operator=(const Contact& other);
 	void setContact();
 
 	void print();
