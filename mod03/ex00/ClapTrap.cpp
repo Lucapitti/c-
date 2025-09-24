@@ -1,5 +1,22 @@
 #include "ClapTrap.h"
 
+ClapTrap::ClapTrap() {
+    std::cout << "ClapTrap default constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap& other)
+{
+	std::cout << "ClapTrap copy constructor called" << std::endl;
+	this->Name = other.Name;
+}
+ClapTrap& ClapTrap::operator=(const ClapTrap& other)
+{
+	std::cout << "ClapTrap = operator called" << std::endl;
+	if (this == &other)
+		return ;
+	this->Name = other.Name;
+}
+
 ClapTrap::ClapTrap(std::string new_name)
 {
 	Name = new_name;

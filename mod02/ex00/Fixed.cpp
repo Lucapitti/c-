@@ -1,6 +1,6 @@
 #include "Fixed.h"
 
-Fixed::Fixed(/* args */) : value(0)
+Fixed::Fixed() : value(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }

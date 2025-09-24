@@ -1,11 +1,24 @@
 #include "ClapTrap.h"
 
-ClapTrap::ClapTrap() : Name("default"), hit_points(10), Energy_points(10), attack_damage(0)
+ClapTrap::ClapTrap() : Name("default"), attack_damage(0), hit_points(10), energy_points(10)
 {
-	std::cout << "ClapTrap default constructor called" << std::endl;
+    std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string new_name) : Name(new_name), hit_points(10), Energy_points(10), attack_damage(0)
+ClapTrap::ClapTrap(const ClapTrap& other) : Name(other.Name), attack_damage(0), hit_points(10), energy_points(10)
+{
+	std::cout << "ClapTrap copy constructor called" << std::endl;
+}
+ClapTrap& ClapTrap::operator=(const ClapTrap& other)
+{
+	std::cout << "ClapTrap = operator called" << std::endl;
+	if (this == &other)
+		return *this;
+	this->Name = other.Name;
+	return *this;
+}
+
+ClapTrap::ClapTrap(std::string new_name) : Name(new_name), attack_damage(0), hit_points(10), energy_points(10)
 {
 	std::cout << "Constructor called for "<< Name << std::endl;
 }
@@ -17,7 +30,7 @@ ClapTrap::~ClapTrap()
 
 void ClapTrap::attack(const std::string& target)
 {
-	if (!this->Energy_points)
+	if (!this->energy_points)
 	{
 		std::cout << this->Name << " cannot attack due to no energy points" << std::endl;
 		return ;
@@ -28,7 +41,7 @@ void ClapTrap::attack(const std::string& target)
 		return ;
 	}
 	std::cout << this->Name << " attacks " << target << ", causing " << this->attack_damage << " points of damage!" << std::endl;
-	this->Energy_points--;
+	this->energy_points--;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -50,7 +63,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (!this->Energy_points)
+	if (!this->energy_points)
 	{
 		std::cout << this->Name << " cannot repair itself due to no energy points" << std::endl;
 		return ;
@@ -61,6 +74,6 @@ void ClapTrap::beRepaired(unsigned int amount)
 		return ;
 	}
 	this->hit_points += amount;
-	this->Energy_points--;
-	std::cout << this->Name << " regained " << amount << " hit points and is not at "<< this->hit_points<<" hit points" << std::endl;
+	this->energy_points--;
+	std::cout << this->Name << " regained " << amount << " hit points and is now at "<< this->hit_points<<" hit points" << std::endl;
 }

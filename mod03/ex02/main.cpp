@@ -20,6 +20,8 @@ int main()
 			b.attack("Cody-clone");
 		b.beRepaired(3);
 		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+		ClapTrap g = a;
+		g.beRepaired(2);
 	}
 	std::cout << "\n\n### TESTING SCAVTRAP ###\n" << std::endl;
 	{
@@ -41,6 +43,8 @@ int main()
 		d.takeDamage(15);
 		d.attack("ScavTrap-clone");
 		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+		ScavTrap h = c;
+		h.beRepaired(1);
 	}
 	std::cout << "\n\n### TESTING FRAGTRAP ###\n" << std::endl;
 	{
@@ -58,6 +62,8 @@ int main()
 		// for(int i = 0; i < 101; i++)
 		// 	f.attack("FragTrap-clone");
 		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+		FragTrap j = f;
+		j.beRepaired(3);
 	}
 	return (0);
 }
