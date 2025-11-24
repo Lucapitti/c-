@@ -15,7 +15,6 @@ void	write_to_file(std::ofstream& outputFile, std::ifstream& infile, std::string
 int main(int argc, char **argv){
 	size_t count = 0;
 	std::string file_name = argv[1];
-	size_t len = strlen(argv[2]);
 	if (argc != 4)
 	{
 		std::cout<<"Invalid input, it has to be filename s1 s2"<<std::endl;

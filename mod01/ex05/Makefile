@@ -1,4 +1,4 @@
-NAME = str
+NAME = Harl
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = main.cpp Harl.cpp
 OBJ	= $(patsubst %.cpp, %.o, $(SRCS))

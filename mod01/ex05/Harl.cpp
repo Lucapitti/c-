@@ -18,16 +18,30 @@ void Harl::error(void){
 
 void Harl::complain(std::string level)
 {
-	std::map<std::string, void (Harl::*)(void)>::iterator it = complaintMap.find(level);
-	if (it != complaintMap.end())
-		(this->*(it->second))();
-	else
+	size_t flag = 0;
+	for (int i = 0; i < 4; i++)
+	{
+		if (complaints[i] == level)
+		{
+			(this->*funcs[i])();
+			flag++;
+		}
+	}
+	if (!flag)
 		std::cout<<"Probably complaining about something else"<<std::endl;
 	
 }
-Harl::Harl(){
-	complaintMap["info"] = &Harl::info;
-	complaintMap["debug"] =  &Harl::debug;
-	complaintMap["warning"] = &Harl::warning;
-	complaintMap["error"] = &Harl::error;
+Harl::Harl()
+{
+	complaints[0] = "debug";
+	complaints[1] = "info";
+	complaints[2] = "warning";
+	complaints[3] = "error";
+
+	funcs[0] = &Harl::debug;
+	funcs[1] = &Harl::info;
+	funcs[2] = &Harl::warning;
+	funcs[3] = &Harl::error;
 }
+
+Harl::~Harl() {}

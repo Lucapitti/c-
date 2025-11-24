@@ -2,20 +2,11 @@
 
 Zombie*	zombieHorde(int N, std::string name)
 {
-	int i = 1;
+	int i = 0;
 	if (N < 1)
 		return (NULL);
-	Zombie *head = new Zombie(name);
-	head->announce();
-	head->next = NULL;
-	Zombie *horde = head;
+	Zombie *head = new Zombie[N];
 	while (i < N)
-	{
-		horde->next = new Zombie(name);
-		horde->announce();
-		horde = horde->next;
-		i++;
-	}
-	horde->next = 0;
+		head[i++].set_name(name);
 	return (head);
 }

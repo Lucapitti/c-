@@ -5,12 +5,14 @@
 class Harl
 {
 	private:
-    std::map<std::string, void (Harl::*)(void)> complaintMap;
-	void debug( void );
-	void info( void );
-	void warning( void );
-	void error( void );
+		std::string complaints[4];
+		void (Harl::*funcs[4])();
+		void debug( void );
+		void info( void );
+		void warning( void );
+		void error( void );
 	public:
-	Harl();
-	void complain( std::string level );
+		Harl();
+		void complain( std::string level );
+		~Harl();
 };
