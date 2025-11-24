@@ -5,7 +5,7 @@ int main() {
 	Point b(Fixed(2), Fixed(0));
 	Point c(Fixed(1), Fixed(1));
 
-	Point p(Fixed(0.5f), Fixed(0.5f));
+	Point p(Fixed(0.5f), Fixed(0.4f));
 	if ((a - b).sign_of_vect_prod(p - b) == (a - b).sign_of_vect_prod(c - b))
 	{
 		if ((b - c).sign_of_vect_prod(p - c) == (b - c).sign_of_vect_prod(a - c))
