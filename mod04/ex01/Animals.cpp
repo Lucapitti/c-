@@ -41,6 +41,7 @@ Dog::Dog() : Animal()
 {
 	std::cout << "Dog default constructor called" << std::endl;
 	type = "Dog";
+	br = new Brain();
 }
 
 Dog::Dog(const Dog& other) : Animal(other)
@@ -57,7 +58,9 @@ Dog& Dog::operator=(const Dog& other)
 
 Dog::~Dog()
 {
+	delete br;
 	std::cout << "Dog default destructor called" << std::endl;
+
 }
 
 void Cat::makeSound() const
@@ -69,6 +72,7 @@ Cat::Cat() : Animal()
 {
 	std::cout << "Cat default constructor called" << std::endl;
 	type = "Cat";
+	br = new Brain();
 }
 
 Cat::Cat(const Cat& other) : Animal(other)
@@ -85,5 +89,6 @@ Cat& Cat::operator=(const Cat& other)
 
 Cat::~Cat()
 {
+	delete br;
 	std::cout << "Cat default destructor called" << std::endl;
 }

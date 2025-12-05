@@ -1,3 +1,6 @@
+#ifndef ANIMALS
+#define ANIMALS
+
 #include <string>
 #include <iostream>
 
@@ -9,15 +12,32 @@ public:
 	Animal();
 	Animal(const Animal& other);
 	Animal& operator=(const Animal& other);
-	void makeSound();
-	std::string getType();
-	~Animal();
+	virtual ~Animal();
+
+	virtual void makeSound() const;
+	std::string getType() const;
 };
 
 class Dog : public Animal
 {
 public:
 	Dog();
-	void makeSound();
+	Dog(const Dog& other);
+	Dog& operator=(const Dog& other);
 	~Dog();
+
+	void makeSound() const;
 };
+
+class Cat : public Animal
+{
+public:
+	Cat();
+	Cat(const Cat& other);
+	Cat& operator=(const Cat& other);
+	~Cat();
+
+	void makeSound() const;
+};
+
+#endif
