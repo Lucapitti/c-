@@ -4,6 +4,8 @@ int main()
 {
 	ClapTrap Charlie("Charlie");
 	ScavTrap Bonnie("Bonnie");
+	ScavTrap Peppe("Peppe");
+	Peppe = Bonnie;
 	Bonnie.attack("Charlie");
 	Bonnie.beRepaired(30);
 	Bonnie.takeDamage(80);
