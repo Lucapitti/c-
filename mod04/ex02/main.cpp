@@ -1,19 +1,17 @@
 #include "Animals.h"
 #include "Brain.h"
 
-#define L 4
+int main() {
+   // Animal a;
 
-int main()
-{
-    Animal *zoo[L];
+    Dog dog;
+    Cat cat;
 
-    for(int i = 0; i < L; i++)
-    {
-        if (i < L/2)
-            zoo[i] = new Dog();
-        else
-            zoo[i] = new Cat();
-    }
-    for(int i = 0; i < L; i++)
-        delete zoo[i];
+    std::cout << "Dog says: ";
+    dog.makeSound();
+
+    std::cout << "Cat says: ";
+    cat.makeSound();
+
+    return 0;
 }

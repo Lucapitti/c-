@@ -7,10 +7,10 @@ RM = rm -f
 INC = -I./
 
 $(NAME): $(OBJ)
-	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.c
-	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
+%.o: %.cpp
+	$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 all: $(NAME)
 

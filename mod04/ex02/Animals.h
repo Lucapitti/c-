@@ -30,6 +30,9 @@ class Dog : public Animal
 		~Dog();
 
 		void makeSound() const;
+		std::string getIdea(int i) const;
+		void setIdea(std::string idea, size_t i);
+
 };
 
 class Cat : public Animal
@@ -43,6 +46,8 @@ class Cat : public Animal
 		~Cat();
 
 		void makeSound() const;
+		std::string getIdea(int i) const;
+		void setIdea(std::string idea, size_t i);
 };
 
 #endif

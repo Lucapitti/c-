@@ -6,13 +6,13 @@ CC = c++
 RM = rm -f
 INC = -I./
 
-$(NAME): $(OBJ)
-	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-
-%.o: %.c
-	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
-
 all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.cpp
+	$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 clean:
 	@$(RM) ${OBJ}
