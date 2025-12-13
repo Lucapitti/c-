@@ -1,11 +1,12 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat() : name("Default"), grade(150)
 {
 	std::cout << "Bureaucrat default constructor called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(std::string new_name, unsigned int i) : name(new_name)
+Bureaucrat::Bureaucrat(std::string new_name, size_t i) : name(new_name)
 {
 	std::cout << "Bureaucrat constructor called for " << new_name << std::endl;
 	if (i > 150)
@@ -64,10 +65,24 @@ std::string Bureaucrat::getName() const
 	return name;
 }
 
-int Bureaucrat::getGrade() const
+size_t Bureaucrat::getGrade() const
 {
 	return grade;
 }
+
+void Bureaucrat::signForm(Form& form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << name << " signed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << name << " couldn't sing " << form.getName() << " beacause: " << e.what() << std::endl;
+	}
+}
+
 
 Bureaucrat::~Bureaucrat()
 {
