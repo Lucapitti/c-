@@ -13,12 +13,13 @@ private:
 	bool				sign;
 	const size_t		grade_to_exec;
 	const size_t 		grade_to_sign;
+	virtual void execute() const = 0;
 public:
 	AForm();
 	AForm(std::string name, size_t i, size_t j);
 	AForm(const AForm& other);
 	AForm& operator=(const AForm& other);
-	virtual ~AForm() = 0;
+	virtual ~AForm();
 
 	class GradeTooHighException : public std::exception {
 		public:
