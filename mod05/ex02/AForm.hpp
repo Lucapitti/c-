@@ -13,7 +13,6 @@ private:
 	bool				sign;
 	const size_t		grade_to_exec;
 	const size_t 		grade_to_sign;
-	virtual void execute() const = 0;
 public:
 	AForm();
 	AForm(std::string name, size_t i, size_t j);
@@ -41,6 +40,7 @@ public:
 	size_t 		getGrade_to_sign() const;
 	size_t 		getGrade_to_exec() const;
 	void beSigned(const Bureaucrat& signer);
+	virtual void execute(const Bureaucrat& executor) const = 0;
 };
 
 std::ostream& operator<<(std::ostream& out, const AForm& fixed);

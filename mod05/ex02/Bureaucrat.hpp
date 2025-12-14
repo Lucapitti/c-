@@ -32,7 +32,7 @@ public:
 	void decrementGrade();
 	std::string getName() const;
 	size_t  getGrade() const;
-	void signForm(Form& form);
+	void signForm(Form& form) const;
 };
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& fixed);

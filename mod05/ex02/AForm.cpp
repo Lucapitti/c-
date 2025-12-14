@@ -1,4 +1,4 @@
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
 AForm::AForm() : name("Default"), sign(false), grade_to_exec(150), grade_to_sign(150)
