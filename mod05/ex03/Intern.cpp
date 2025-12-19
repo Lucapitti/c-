@@ -49,7 +49,7 @@ AForm* Intern::createPresidential(std::string target)
 }
 
 
-AForm *Intern::makeForm(std::string name, std::string target)
+AForm *Intern::makeForm(std::string name, std::string target) const
 {
 	for (int i = 0; i < 3; i++)
 	{
