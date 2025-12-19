@@ -4,7 +4,7 @@
 #include <string>
 #include <iostream>
 
-class Form;
+class AForm;
 
 class  Bureaucrat
 {
@@ -32,7 +32,8 @@ public:
 	void decrementGrade();
 	std::string getName() const;
 	size_t  getGrade() const;
-	void signForm(Form& form) const;
+	void signForm(AForm& form) const;
+	void executeForm(AForm const & form) const;
 };
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& fixed);

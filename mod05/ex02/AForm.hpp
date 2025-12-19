@@ -35,6 +35,11 @@ public:
 		virtual const char *what() const throw();
 	};
 
+	class AFormNotSigned : public std::exception {
+		public:
+		virtual const char *what() const throw();
+	};
+
 	std::string getName() const;
 	bool 		getSigned() const;
 	size_t 		getGrade_to_sign() const;

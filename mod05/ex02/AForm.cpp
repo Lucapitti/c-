@@ -21,17 +21,22 @@ AForm::AForm(std::string new_name, size_t i, size_t j) : name(new_name), sign(fa
 
 const char *AForm::GradeTooHighException::what() const throw()
 {
-	return ("Grade too high to sign document");
+	return ("Grade too high");
 }
 
 const char *AForm::GradeTooLowException::what() const throw()
 {
-	return ("Grade too low to sign document");
+	return ("Grade too low");
 }
 
 const char *AForm::AFormAlreadySigned::what() const throw()
 {
-	return ("The Aform is already signed");
+	return ("Form is already signed");
+}
+
+const char *AForm::AFormNotSigned::what() const throw()
+{
+	return ("Form is not signed");
 }
 
 AForm::AForm(const AForm& other) : name(other.name), grade_to_exec(other.grade_to_exec), grade_to_sign(other.grade_to_sign)

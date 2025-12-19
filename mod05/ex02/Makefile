@@ -1,6 +1,6 @@
 NAME = Bureaucrat
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp
 OBJ	= $(patsubst %.cpp, %.o, $(SRCS))
 CC = c++
 RM = rm -f
