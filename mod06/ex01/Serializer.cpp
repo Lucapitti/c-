@@ -19,11 +19,6 @@ Serializer::~Serializer()
 {
 }
 
-const char *Serializer::InvalidFormatException::what() const throw()
-{
-	return("Invalid format, impossible to convert to any variable type");
-}
-
 uintptr_t Serializer::serialize(Data* ptr)
 {
 	return reinterpret_cast<uintptr_t>(ptr);
